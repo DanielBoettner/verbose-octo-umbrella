@@ -4,7 +4,22 @@ services:
     build: 
       context: ./containers/server/
     stdin_open: true # docker run -i
-    tty: true 
+    tty: true
+    networks:
+      default:
+        aliases:
+          - server
+
+  client:
+    image: ${COMPOSE_PROJECT_NAME}/server
+    build: 
+      context: ./containers/client/
+    stdin_open: true # docker run -i
+    tty: true
+    networks:
+      default:
+        aliases:
+          - client
 
 networks:
     default:
