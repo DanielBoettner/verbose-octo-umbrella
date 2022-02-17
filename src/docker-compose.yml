@@ -1,0 +1,14 @@
+services:
+  server:
+    image: ${COMPOSE_PROJECT_NAME}/server
+    build: 
+      context: ./containers/server/
+    stdin_open: true # docker run -i
+    tty: true 
+
+networks:
+    default:
+        driver: bridge
+        ipam:
+            config:
+            -   subnet: ${NETWORK_SUBNET}

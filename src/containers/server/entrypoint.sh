@@ -2,6 +2,6 @@
 
 printf "~~~ entry script started ~~~ \n"
 
-# do fancy stuff here
+service ssh restart && bash
 
 printf "+++ entry script finished +++ \n"
