@@ -11,7 +11,7 @@ services:
           - server
 
   client:
-    image: ${COMPOSE_PROJECT_NAME}/server
+    image: ${COMPOSE_PROJECT_NAME}/client
     build: 
       context: ./containers/client/
     stdin_open: true # docker run -i
